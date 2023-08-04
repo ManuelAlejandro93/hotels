@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&family=Roboto:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  width: 100%;
+  color: white;
+}
+.header .contenedorIMG {
+  width: 100%;
+  overflow: hidden;
+}
+.header .contenedorIMG .fondoDePantalla {
+  transform: translateY(-810px);
+}
+.header .contenedorDeHeader {
+  position: absolute;
+  top: 0px;
+  padding: 48px 48px 28px;
+  width: 100%;
+  height: 500px;
+  background-image: url("../assets/4.merced-del-alto.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.header .contenedorDeHeader .h1 {
+  font-size: 90px;
+  padding-bottom: 16px;
+  font-family: "Pacifico", "cursive";
+}
+.header .contenedorDeHeader .contenedorFiltros {
+  width: 100%;
+  padding: 10px 0;
+}
+.header .contenedorDeHeader .contenedorFiltros .flexFiltros {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.header .contenedorDeHeader .contenedorFiltros .filtro {
+  background-color: white;
+  text-decoration: none;
+  font-family: "Roboto", serif;
+  background-color: rgba(255, 255, 255, 0.7490196078);
+  width: 200px;
+  height: 39px;
+  border: solid gray 1px;
+  opacity: 0.7;
+  padding-left: 30px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.header .contenedorDeHeader .contenedorFiltros .selectCountry {
+  background-image: url("../assets/locationIcon.png");
+  background-size: 9%;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 3px;
+}
+.header .contenedorDeHeader .contenedorFiltros .checkIn {
+  background-image: url("../assets/locationIcon.png");
+  background-size: 9%;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 3px;
+  background-image: url("../assets/CheckIn.png");
+  background-size: 10%;
+}
+.header .contenedorDeHeader .contenedorFiltros .checkOut {
+  background-image: url("../assets/locationIcon.png");
+  background-size: 9%;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 3px;
+  background-image: url("../assets/CheckOut.png");
+}
+.header .contenedorDeHeader .contenedorFiltros .prices {
+  background-image: url("../assets/locationIcon.png");
+  background-size: 9%;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 3px;
+  background-image: url("../assets/priceIcon.png");
+}
+.header .contenedorDeHeader .contenedorFiltros .sizes {
+  background-image: url("../assets/locationIcon.png");
+  background-size: 9%;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 3px;
+  background-image: url("../assets/bedIcon.jpg");
+}
+.header .contenedorDeHeader .contenedorFiltros .clear {
+  background-color: rgba(51, 51, 51, 0.88);
+  border: 2px white solid;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: white;
+  width: 97px;
+  height: 38px;
+  border-radius: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.header .contenedorDeHeader .contenedorTexto {
+  padding-top: 16px;
+}
+.header .contenedorDeHeader .contenedorTexto .textoFijo {
+  font-size: 48px;
+  font-family: "Dancing Script", "cursive";
+  padding: 9.6px 0 8px 3.2px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.header .contenedorDeHeader .contenedorTexto .textoDinamico {
+  font-size: 23px;
+  font-family: "Roboto", "sans-serif";
+  padding: 18px 0 8px 3.2px;
+  font-weight: 600;
+}/*# sourceMappingURL=header.css.map */

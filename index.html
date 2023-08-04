@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotels</title>
+    <link rel="stylesheet" href="./css/header.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="contenedorDeHeader">
+        <h1 class="h1">Book it!</h1>
+        <div class="contenedorFiltros">
+          <div class="flexFiltros">
+            <select class="filtro selectCountry" name="selectCountry">
+              <option value="allcountries">All Countries</option>
+              <option value="argentina">Argetina</option>
+              <option value="brasil">Brasil</option>
+              <option value="chile">Chile</option>
+              <option value="uruguay">Uruguay</option>
+            </select>
+            <input class="filtro checkIn" type="date" />
+            <input class="filtro checkOut" type="date" />
+            <select class="filtro prices" name="selectPrice">
+              <option value="allPrices">AllPrices</option>
+              <option value="$">$</option>
+              <option value="$$">$$</option>
+              <option value="$$$">$$$</option>
+              <option value="$$$$">$$$$</option>
+            </select>
+            <select class="filtro sizes" name="selectSize">
+              <option value="allsizes">AllSizes</option>
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+            </select>
+            <button class="clear">Clear</button>
+          </div>
+        </div>
+        <div class="contenedorTexto">
+          <p class="textoFijo">We have found for you...</p>
+          <p class="textoDinamico">
+            All sizes hotels of all category prices, in all countries.
+          </p>
+        </div>
+      </div>
+    </header>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
