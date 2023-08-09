@@ -51,6 +51,9 @@
   font-size: 18px;
   font-weight: 600;
 }
+.header .contenedorDeHeader .contenedorFiltros .filtro:hover {
+  background-color: hsla(0, 0%, 80%, 0.749);
+}
 .header .contenedorDeHeader .contenedorFiltros .selectCountry {
   background-image: url("../assets/locationIcon.png");
   background-size: 9%;
@@ -102,6 +105,9 @@
   border-radius: 10px;
   font-weight: bold;
   letter-spacing: 2px;
+}
+.header .contenedorDeHeader .contenedorFiltros .clear:hover {
+  background-color: hsla(0, 0%, 10%, 0.88);
 }
 .header .contenedorDeHeader .contenedorTexto {
   padding-top: 16px;

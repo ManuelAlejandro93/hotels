@@ -6,10 +6,9 @@
   box-sizing: border-box;
 }
 
-.body{
+.body {
   overflow-x: hidden;
 }
-
 
 $background-filtros: white;
 $background-clear: rgba(51, 51, 51, 0.88);
@@ -76,6 +75,10 @@ $background-clear: rgba(51, 51, 51, 0.88);
         @include filtros();
       }
 
+      .filtro:hover {
+        background-color: hsla(0, 0%, 80%, 0.749);
+      }
+
       .selectCountry {
         @include iconosDeFiltros;
       }
@@ -112,6 +115,10 @@ $background-clear: rgba(51, 51, 51, 0.88);
         border-radius: 10px;
         font-weight: bold;
         letter-spacing: 2px;
+      }
+
+      .clear:hover {
+        background-color: hsla(0, 0%, 10%, 0.88);
       }
     }
 
@@ -197,10 +204,9 @@ $background-clear: rgba(51, 51, 51, 0.88);
       display: flex;
       @include ubicacionDeInfo;
 
-      .pAbajo{
+      .pAbajo {
         margin-right: 10px;
       }
-
     }
   }
 

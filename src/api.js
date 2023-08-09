@@ -59,5 +59,5 @@ async function conocerSlug(n) {
 }
 
 
-export { Prueba, llamarJSON, conocerPais, conocerCiudad, conocerDescripcion, conocerNombre, conocerFoto, conocerPrecio, conocerRooms, conocerSlug }
+export {llamarJSON}
 
