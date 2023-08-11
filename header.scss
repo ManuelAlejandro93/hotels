@@ -124,6 +124,8 @@ $background-clear: rgba(51, 51, 51, 0.88);
 
     .contenedorTexto {
       padding-top: 16px;
+      position: relative;
+      top: 80px;
       .textoFijo {
         font-size: 48px;
         font-family: "Dancing Script", "cursive";
@@ -137,6 +139,8 @@ $background-clear: rgba(51, 51, 51, 0.88);
         font-family: "Roboto", "sans-serif";
         padding: 18px 0 8px 3.2px;
         font-weight: 600;
+        position: relative;
+        bottom: 30px;
       }
     }
   }

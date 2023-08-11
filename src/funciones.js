@@ -60,7 +60,7 @@ async function imprimirTodasLasCards(main) {
 }
 
 
-async function imprimirCardsFiltradasPorPrecio(main, precioIngresado, textoDinamico) {
+async function imprimirCardsFiltradasPorPrecio(main, precioIngresado) {
   let arreglo = await llamarJSON();
   let arregloFiltrado = arreglo.filter(
     e => e.price === precioIngresado
@@ -110,18 +110,14 @@ async function imprimirCardsFiltradasPorPrecio(main, precioIngresado, textoDinam
 
     if (e.price === 1) {
       precioAbajo.innerText = "$";
-      textoDinamico.innerText = "All sizes hotels of economic prices, in all countries.";
     } else if (e.price === 2) {
       precioAbajo.innerText = "$$";
-      textoDinamico.innerText = "All sizes hotels of comfort prices, in all countries.";
     } else if (e.price === 3) {
       precioAbajo.innerText = "$$$";
-      textoDinamico.innerText = "All sizes hotels of premium prices, in all countries.";
     } else if (e.price === 4) {
       precioAbajo.innerText = "$$$$";
-      textoDinamico.innerText = "All sizes hotels of deluxe prices, in all countries.";
-    } 
-    
+    }
+
     contenedorAbajo.append(pAbajo, precioAbajo);
     card.append(h2, contenedorArriba, contenedorAbajo);
     main.appendChild(card);

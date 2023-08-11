@@ -1,43 +1,43 @@
 // EventListener para checkIn.
-checkIn.addEventListener("change", async () => {
+// checkIn.addEventListener("change", async () => {
     // convierto la fecha del CheckIn a ms.
-    let fechaCheckIn = (new Date(checkIn.value)).getTime();
+    // let fechaCheckIn = (new Date(checkIn.value)).getTime();
     // Llamo el arreglo para trabajarlo. 
-    let data = await llamarJSON()
+    // let data = await llamarJSON()
   
     // El tiempo de checkIn debe ser mayor que 
     // el tiempo de disponibilidad de ingreso, para 
     // poder hacer la reservación.
   
     // ................................................................................... //
-    let hotelesCheckInDisponibles = data.filter(hoteles => fechaCheckIn >= hoteles.availabilityFrom
-    )
-    if (hotelesCheckInDisponibles.length === data.length) {
-      console.log("Todos los hoteles están disponibles.");
-    }
-  })
+    // let hotelesCheckInDisponibles = data.filter(hoteles => fechaCheckIn >= hoteles.availabilityFrom
+    // )
+    // if (hotelesCheckInDisponibles.length === data.length) {
+      // console.log("Todos los hoteles están disponibles.");
+    // }
+  // })
   
   // EventListener para checkOut.
   
-  checkOut.addEventListener("change", async () => {
+  // checkOut.addEventListener("change", async () => {
     // convierto la fecha del CheckOut a ms.
-    let fechaCheckOut = (new Date(checkOut.value)).getTime();
+    // let fechaCheckOut = (new Date(checkOut.value)).getTime();
     // Llamo el arreglo para trabajarlo. 
-    let data = await llamarJSON()
+    // let data = await llamarJSON()
   
     // la disponibilidad de checkout debe ser mayor o igual 
     // a la solicitada por el cliente si no, no hay posibilidad 
     // de salida. 
   
-    let hotelesCheckOutDisponibles = data.filter(hoteles => fechaCheckOut <= hoteles.availabilityTo
-    )
+    // let hotelesCheckOutDisponibles = data.filter(hoteles => fechaCheckOut <= hoteles.availabilityTo
+    // )
     // la cantidad de hoteles disponibles para graficar algo debe ser de 1 o más para renderizar algo.
-    if (hotelesCheckOutDisponibles.length < 1) {
-      console.log("No hay CheckOut disponible.");
-    } else {
-      console.log("Puedo graficar algo.");
-    }
-  })
+    // if (hotelesCheckOutDisponibles.length < 1) {
+      // console.log("No hay CheckOut disponible.");
+    // } else {
+      // console.log("Puedo graficar algo.");
+    // }
+  // })
 
   // Función que comprueba las fechas de checkIn
   // y las fechas de CheckOut
@@ -45,8 +45,13 @@ checkIn.addEventListener("change", async () => {
 
   // Establecer fecha mínima de CheckOut.
 // la fecha del CheckOut no puede ser menor a la fecha de hoy.
-checkOut.setAttribute("min", fechaActual);
+// checkOut.setAttribute("min", fechaActual);
 
+async function llamarJSON() {
+  let response = await fetch("https://6256097e8646add390e01d99.mockapi.io/hotels/reservation/hotels");
+  let json = await response.json();
+  return await json;
+}
 
 // comparando la fecha del día de hoy con las fechas máxima de
 // CheckIn y CheckOut que devuelve la API.

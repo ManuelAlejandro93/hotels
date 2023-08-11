@@ -1,5 +1,6 @@
 import { llamarJSON } from "./src/api.js";
 import { imprimirTodasLasCards, imprimirCardsFiltradasPorPrecio } from "./src/funciones.js";
+import { fechasImpresas } from "./src/formatoDeFechasImpreso.js";
 
 let header = document.getElementsByClassName("header")[0];
 
@@ -50,6 +51,12 @@ let precioIngresado = document.getElementsByClassName("prices")[0];
 let botonClear = document.getElementsByClassName("clear")[0];
 let textoDinamico = document.getElementsByClassName("textoDinamico")[0];
 
+// Estableciendo por defecto los valores del texto 
+//dinámico.
+let textoFiltroFechas = "";
+textoDinamico.innerText = `All sizes hotels,${textoFiltroFechas} in all countries.`;
+
+
 
 // Establecer las fechas mínimas de CheckIn.
 // y de CheckOut.
@@ -71,25 +78,48 @@ imprimirTodasLasCards(main);
 precioIngresado.addEventListener("change", e => {
   let precioIngresado = Number(e.target.value);
   if (precioIngresado === 1) {
-    imprimirCardsFiltradasPorPrecio(main, precioIngresado,textoDinamico);
+    imprimirCardsFiltradasPorPrecio(main, precioIngresado);
   } else if (precioIngresado === 2) {
-    imprimirCardsFiltradasPorPrecio(main, precioIngresado,textoDinamico);
+    imprimirCardsFiltradasPorPrecio(main, precioIngresado);
   } else if (precioIngresado === 3) {
-    imprimirCardsFiltradasPorPrecio(main, precioIngresado,textoDinamico);
+    imprimirCardsFiltradasPorPrecio(main, precioIngresado);
   } else if (precioIngresado === 4) {
-    imprimirCardsFiltradasPorPrecio(main, precioIngresado,textoDinamico);
+    imprimirCardsFiltradasPorPrecio(main, precioIngresado);
   } else {
     imprimirTodasLasCards(main);
-    textoDinamico.innerText = "All sizes hotels of all prices, in all countries.";
   }
 })
 
 //AddEventListener para el boton clear.
 
-botonClear.addEventListener("click", ()=>{
+botonClear.addEventListener("click", () => {
+
   imprimirTodasLasCards(main);
-  textoDinamico.innerText = "All sizes hotels of all prices, in all countries.";
+  checkIn.setAttribute("min", fechaActual);
+  checkOut.setAttribute("min", fechaActual);
+  checkIn.removeAttribute("max");
+  checkOut.removeAttribute("max");
   checkIn.value = checkIn.defaultValue;
   checkOut.value = checkOut.defaultValue;
   precioIngresado.selectedIndex = 0
+  textoFiltroFechas = "";
+  textoDinamico.innerText = `All sizes hotels,${textoFiltroFechas} in all countries.`;
+})
+
+checkIn.addEventListener("change", (e) => {
+  // si a checkout no se le ha ingresado un valor.
+  if (checkOut.value.length === 0) {
+    checkOut.setAttribute("min", e.target.value);
+  } else {
+    textoDinamico.innerText = `All sizes hotels${fechasImpresas(e.target.value, checkOut.value)} in all countries.`;
+  }
+})
+
+checkOut.addEventListener("change", (e) => {
+  // si a checkIn no se le ha ingresado un valor.
+  if (checkIn.value.length === 0) {
+    checkIn.setAttribute("max", checkOut.value);
+  } else {
+    textoDinamico.innerText = `All sizes hotels${fechasImpresas(checkIn.value, e.target.value)} in all countries.`;
+  }
 })
